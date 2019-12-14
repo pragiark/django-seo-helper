@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+#my apps
+    'dsh_scrapper.apps.DshScrapperConfig',
 ]
 
 MIDDLEWARE = [
