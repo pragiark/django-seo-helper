@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+from .models import Client
+
+def index(request):
+    www_list = Client.objects.all()
+    return HttpResponse(www_list)
+
+
