@@ -55,7 +55,9 @@ ROOT_URLCONF = 'django_seo_helper.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'django_seo_helper/templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
