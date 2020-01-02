@@ -16,10 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from dsh_scrapper import views
-
 urlpatterns = [
-    path('dsh_scrapper/', include('dsh_scrapper.urls')),
     path('admin/', admin.site.urls),
-    path('add-client/', views.AddClientView.as_view())
+    path('dsh_scrapper/', include('dsh_scrapper.urls')),
 ]
