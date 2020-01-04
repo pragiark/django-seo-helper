@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from .forms import AddClientForm
 
+
 class AddClientView(View):
     template = 'django_seo_helper/add_client.html'
 
