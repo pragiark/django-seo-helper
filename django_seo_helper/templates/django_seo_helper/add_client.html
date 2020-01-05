@@ -1,18 +1,18 @@
-<html>
-<body>
+{% extends 'django_seo_helper/base.html' %}
 
-<form method="POST" class="post-form">{% csrf_token %}
-{{ form.as_p }}
-<button type="submit" class="save btn btn-default">Save</button>
 
-    {% if messages %}
-  <ul>
-    {% for message in messages %}
-      <li class="{{ message.tags }}">{{ message }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}
+{% block content %}
+    <form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
 
-</form>
-</body>
-</html>
+        {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    </form>
+{% endblock %}
