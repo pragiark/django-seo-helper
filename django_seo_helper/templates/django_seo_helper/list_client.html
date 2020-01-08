@@ -1,0 +1,8 @@
+{% extends 'django_seo_helper/base.html' %}
+
+
+{% block content %}
+   {%  for element in list_views %}
+       {{  element.name }} - <a href ={{  element.url }}>{{  element.url }}</a> <br>
+   {% endfor %}
+{% endblock %}
