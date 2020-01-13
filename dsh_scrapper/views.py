@@ -1,5 +1,6 @@
 from django.contrib import messages
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views import View
 
 from .forms import AddClientForm
@@ -19,12 +20,13 @@ class AddClientView(View):
             new_form = form.save(commit=False)
             new_form.save()
             messages.success(request, 'Added successfully')
-            # TODO: redirect to same url when success and add message using django.contrib.messages.
-            return render(request, self.template, {'form': form})
+            return redirect(reverse('add_client'))
         return render(request, self.template, {'form': form})
+
 
 class ListClientView(View):
     template = 'django_seo_helper/list_client.html'
+
     def get(self, request):
         list_views = Client.objects.all()
         return render(request, self.template, {'list_views': list_views})

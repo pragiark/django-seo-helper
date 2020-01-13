@@ -1,4 +1,5 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
+
 from dsh_scrapper.models import Client
 
 
@@ -10,7 +11,7 @@ class Command(BaseCommand):
         parser.add_argument('url')
 
     def handle(self, *args, **options):
-        name_var = options['name']
-        url_var = options['url']
-        sucess_var = Client.objects.create(name=name_var, url=url_var)
-        self.stdout.write(self.style.SUCCESS('Successfully add %s' % sucess_var))
+        name = options['name']
+        url = options['url']
+        success = Client.objects.create(name=name, url=url)
+        self.stdout.write(self.style.SUCCESS('Successfully add %s' % success))

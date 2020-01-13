@@ -16,3 +16,6 @@ class PageStatus(models.Model):
     status = models.CharField(max_length=100)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     created = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'{self.created} : {self.client.name}'
