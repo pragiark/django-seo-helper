@@ -1,8 +1,22 @@
 {% extends 'django_seo_helper/base.html' %}
-
-
 {% block content %}
+        <div class="col-md-8">
+        <h2>Site list</h2>
+        <table class="table table-sm">
+        <thead>
+    <tr class="table-success">
+      <th scope="col">Client Name</th>
+      <th scope="col">Adress</th>
+    </tr>
+  </thead>
    {%  for element in list_views %}
-       {{  element.name }} - <a href ={{  element.url }}>{{  element.url }}</a> <br>
+       <tbody>
+       <tr>
+       <td>{{  element.name }}</td>  <td><a href ={{  element.url }}>{{  element.url }}</a></td>
    {% endfor %}
+        </table>
+        </div>
+
 {% endblock %}
+
+
