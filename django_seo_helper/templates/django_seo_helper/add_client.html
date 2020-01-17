@@ -1,10 +1,14 @@
 {% extends 'django_seo_helper/base.html' %}
 
-
 {% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="jumbotron">
+            <h2>Add Name and url</h2>
+
     <form method="POST" class="post-form">{% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
+    <button type="submit" class="save btn btn-danger">Save</button>
 
         {% if messages %}
       <ul>
@@ -15,4 +19,7 @@
     {% endif %}
 
     </form>
+    </div>
+    </div>
+    </div>
 {% endblock %}

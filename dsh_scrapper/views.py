@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views import View
 
 from .forms import AddClientForm
-from .models import Client
+from .models import Client, PageStatus
 
 
 class AddClientView(View):
@@ -30,3 +30,11 @@ class ListClientView(View):
     def get(self, request):
         list_views = Client.objects.all()
         return render(request, self.template, {'list_views': list_views})
+
+
+class ListScrape(View):
+    template = 'django_seo_helper/scrapp_list.html'
+
+    def get(self, request):
+        scrapp_views = PageStatus.objects.all()
+        return render(request, self.template, {'scrapp_views': scrapp_views})
