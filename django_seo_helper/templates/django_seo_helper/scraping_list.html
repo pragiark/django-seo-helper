@@ -1,0 +1,29 @@
+{% extends 'django_seo_helper/base.html' %}
+
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-sm">
+            <h2>Scrape list</h2>
+            {% for scrape in scrapp_views %}
+                <div class="col-sm">
+                    Nazwa: {{ scrape.client }}
+                </div>
+                <div class="col-sm">
+                    {% if scrape.status == '200' %}
+                        <div class="alert alert-success" role="alert">Status: {{ scrape.status }}</div>
+                    {% elif scrape.status != '200' %}
+                        <div class="alert alert-danger" role="alert">Status: {{ scrape.status }}</div>
+                    {% endif %}
+                </div>
+                <div class="col-sm">
+                    Ciało strony: {{ scrape.body }}
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}
