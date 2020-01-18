@@ -1,27 +1,28 @@
 <html>
 <head>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Django Seo Helper</a>
     <div id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'add_client' %}">Add Client</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'list_client' %}">List Client</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'scrapp_list' %}">Scrapp List</a>
-        </li>
-      </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_client' %}">Add Client</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'list_client' %}">List Client</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'scrapp_list' %}">Scrapp List</a>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>
 <div class="container">
-{% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 </div>
 </body>
 </html>

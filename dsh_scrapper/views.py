@@ -32,9 +32,9 @@ class ListClientView(View):
         return render(request, self.template, {'list_views': list_views})
 
 
-class ListScrape(View):
-    template = 'django_seo_helper/scrapp_list.html'
+class ListScrapeView(View):
+    template = 'django_seo_helper/scraping_list.html'
 
     def get(self, request):
-        scrapp_views = PageStatus.objects.all()
-        return render(request, self.template, {'scrapp_views': scrapp_views})
+        scraping_views = PageStatus.objects.all()
+        return render(request, self.template, {'scraping_views': scraping_views})

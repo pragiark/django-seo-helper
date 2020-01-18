@@ -4,22 +4,22 @@
     <div class="row">
         <div class="col-md-8">
             <div class="jumbotron">
-            <h2>Add Name and url</h2>
+                <h2>Add Name and url</h2>
 
-    <form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-danger">Save</button>
+                <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="save btn btn-danger">Save</button>
 
-        {% if messages %}
-      <ul>
-        {% for message in messages %}
-          <li class="{{ message.tags }}">{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
 
-    </form>
-    </div>
-    </div>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock %}
