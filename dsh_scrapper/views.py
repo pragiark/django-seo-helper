@@ -2,12 +2,14 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import AddClientForm
 from .models import Client, PageStatus
 
 
-class AddClientView(View):
+class AddClientView(LoginRequiredMixin, View):
+    login_url = '/login'
     template = 'django_seo_helper/add_client.html'
 
     def get(self, request):
