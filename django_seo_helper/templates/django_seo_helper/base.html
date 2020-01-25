@@ -23,9 +23,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'scrapp_list' %}">Scrapp List</a>
             </li>
+             <li class="nav-item">
+                 {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'logout' %}">logout {{ user.username }}</a>
+                 {% else %}
+                    <a class="nav-link" href="{% url 'login' %}">login</a>
+                 {% endif %}
+            </li>
         </ul>
-    </div>
+     </div>
+
 </nav>
+
+{% if user.is_authenticated %}
+   Hi {{ user.username }}
+
+{% else %}
+  <p>You are not logged in</p>
+{% endif %}
+
 <div class="container">
     {% block content %}{% endblock %}
 </div>
