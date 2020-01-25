@@ -1,0 +1,18 @@
+{% extends 'django_seo_helper/base.html' %}
+
+{% block title %}Logout{% endblock %}
+{% block content %}
+    <h2>Logout</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <p>You have been logged out. You can login again.</p>
+            <p>{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p><a href="{% url 'add_client' %}">login</a></p>
+{% endif %}</p>
+
+        </div>
+    </div>
+{% endblock %}
